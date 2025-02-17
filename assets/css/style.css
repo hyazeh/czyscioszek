@@ -1,31 +1,31 @@
-/* Poprawienie nawigacji */
+/* Nawigacja - wyświetlanie poziome */
 nav {
-    display: flex; /* Używamy Flexboxa, żeby elementy były w jednym wierszu */
-    justify-content: center;
+    display: flex; /* Używamy Flexboxa */
+    justify-content: center; /* Wyrównanie w poziomie na środku */
     background-color: #333;
     padding: 10px;
 }
 
 nav a {
     color: white;
-    padding: 10px 15px;
+    padding: 10px 20px;
     text-decoration: none;
     text-transform: uppercase;
     font-weight: bold;
 }
 
-/* Upewnijmy się, że cała zawartość jest prawidłowo wyśrodkowana */
-main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
+/* Usuwamy domyślne marginesy/padding */
+body, html {
+    margin: 0;
+    padding: 0;
 }
 
+/* Sekcje */
 section {
     width: 100%;
     max-width: 1200px;
-    margin: 20px 0;
+    margin: 0 auto;
     padding: 20px;
     background-color: #fff;
+    text-align: center;
 }
