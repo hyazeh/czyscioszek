@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Czyścioszek - Usługi czyszczenia i impregnacji</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+        header p {
+            font-size: 1.2em;
+            margin: 5px 0;
+        }
+        section {
+            padding: 40px 20px;
+        }
+        .services {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        .service-card {
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            width: 30%;
+            margin: 10px 0;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+        .service-card h3 {
+            font-size: 1.6em;
+            margin-bottom: 10px;
+        }
+        .service-card p {
+            font-size: 1.1em;
+        }
+        form {
+            max-width: 600px;
+            margin: 30px auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #2c3e50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #34495e;
+        }
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Czyścioszek</h1>
+        <p>Profesjonalne mycie i impregnacja kostki brukowej oraz nawierzchni</p>
+    </header>
+    
+    <section>
+        <h2>Nasze usługi</h2>
+        <div class="services">
+            <div class="service-card">
+                <h3>Mycie kostki brukowej</h3>
+                <p>Usuwanie brudu, mchu i innych zanieczyszczeń z kostki brukowej, przywracając jej pierwotny wygląd.</p>
+            </div>
+            <div class="service-card">
+                <h3>Impregnacja nawierzchni</h3>
+                <p>Ochrona kostki brukowej i innych nawierzchni przed wodą, brudem oraz uszkodzeniami mechanicznymi.</p>
+            </div>
+            <div class="service-card">
+                <h3>Mycie znaków drogowych</h3>
+                <p>Profesjonalne czyszczenie i konserwacja znaków drogowych, zapewniające ich czytelność i trwałość.</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Skontaktuj się z nami</h2>
+        <form action="https://formsubmit.co/your-email@example.com" method="POST">
+            <input type="text" name="name" placeholder="Twoje imię" required>
+            <input type="email" name="email" placeholder="Twój e-mail" required>
+            <textarea name="message" rows="4" placeholder="Twoja wiadomość" required></textarea>
+            <input type="submit" value="Wyślij wiadomość">
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Czyścioszek - Wszystkie prawa zastrzeżone</p>
+    </footer>
+</body>
+</html>
