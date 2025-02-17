@@ -16,9 +16,7 @@
             font-family: 'Roboto', sans-serif;
             background-color: #f5f5f5;
             color: #333;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
+            scroll-behavior: smooth; /* Płynne przewijanie */
         }
 
         header {
@@ -58,8 +56,8 @@
         /* Sekcje */
         section {
             padding: 60px 20px;
+            min-height: 100vh;
             display: none; /* Początkowo ukrywamy wszystkie sekcje */
-            min-height: 80vh;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -127,7 +125,7 @@
             margin-bottom: 15px;
         }
 
-        /* Styl dla formularza kontaktowego */
+        /* Formularz kontaktowy */
         form {
             max-width: 600px;
             margin: 50px auto;
@@ -172,21 +170,21 @@
 
     <!-- Nawigacja -->
     <nav>
-        <a href="javascript:void(0)" onclick="showSection('start')">Start</a>
-        <a href="javascript:void(0)" onclick="showSection('about')">O nas</a>
-        <a href="javascript:void(0)" onclick="showSection('services')">Usługi</a>
-        <a href="javascript:void(0)" onclick="showSection('gallery')">Galeria</a>
-        <a href="javascript:void(0)" onclick="showSection('pricing')">Cennik</a>
-        <a href="javascript:void(0)" onclick="showSection('contact')">Kontakt</a>
-        <a href="javascript:void(0)" onclick="showSection('testimonials')">Opinie</a>
-        <a href="javascript:void(0)" onclick="showSection('faq')">FAQ</a>
+        <a href="#start">Start</a>
+        <a href="#about">O nas</a>
+        <a href="#services">Usługi</a>
+        <a href="#gallery">Galeria</a>
+        <a href="#pricing">Cennik</a>
+        <a href="#contact">Kontakt</a>
+        <a href="#testimonials">Opinie</a>
+        <a href="#faq">FAQ</a>
     </nav>
 
     <!-- Startowa strona -->
     <section id="start" class="active">
         <h2>Witamy w Czyścioszek!</h2>
         <p>Profesjonalne usługi czyszczenia i impregnacji nawierzchni, kostki brukowej i znaków drogowych.</p>
-        <button onclick="showSection('about')">Dowiedz się więcej</button>
+        <button onclick="location.href='#about'">Dowiedz się więcej</button>
     </section>
 
     <!-- O nas -->
@@ -272,16 +270,5 @@
         </form>
     </section>
 
-    <script>
-        function showSection(id) {
-            const sections = document.querySelectorAll('section');
-            sections.forEach(section => {
-                section.classList.remove('active'); // Ukrywamy wszystkie sekcje
-            });
-
-            const activeSection = document.getElementById(id);
-            activeSection.classList.add('active'); // Pokazujemy wybraną sekcję
-        }
-    </script>
 </body>
 </html>
