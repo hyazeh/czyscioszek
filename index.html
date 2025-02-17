@@ -43,6 +43,7 @@
             padding: 10px 20px;
             margin: 0 15px;
             font-size: 1.1em;
+            cursor: pointer;
             transition: background-color 0.3s ease;
         }
 
@@ -54,14 +55,15 @@
         /* Sekcje */
         section {
             padding: 60px 20px;
+            display: none; /* Początkowo ukrywamy wszystkie sekcje */
         }
 
-        .services, .gallery, .pricing, .testimonials {
-            margin-top: 30px;
+        section.active {
+            display: block; /* Tylko aktywna sekcja jest widoczna */
         }
 
-        /* Usługi */
-        .service-card {
+        /* Stylowanie innych sekcji jak wcześniej, np. Usługi, Galeria, Cennik */
+        .service-card, .pricing-card, .testimonial-card {
             background-color: white;
             border-radius: 12px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -70,61 +72,17 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .service-card:hover {
+        .service-card:hover, .pricing-card:hover, .testimonial-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
 
-        .service-card h3 {
+        .service-card h3, .pricing-card h3, .testimonial-card p {
             font-size: 1.8em;
             margin-bottom: 15px;
         }
 
-        .service-card p {
-            font-size: 1.1em;
-            color: #666;
-        }
-
-        /* Galeria */
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
-        }
-
-        .gallery img {
-            width: 100%;
-            border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Cennik */
-        .pricing {
-            display: flex;
-            justify-content: space-around;
-            text-align: center;
-            background-color: #eaeaea;
-            padding: 50px 0;
-        }
-
-        .pricing-card {
-            background-color: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            padding: 30px;
-            width: 250px;
-        }
-
-        .pricing-card h3 {
-            font-size: 1.5em;
-            margin-bottom: 20px;
-        }
-
-        .pricing-card p {
-            font-size: 1.2em;
-        }
-
-        /* Formularz kontaktowy */
+        /* Styl dla formularza kontaktowego */
         form {
             max-width: 600px;
             margin: 50px auto;
@@ -163,57 +121,6 @@
             background-color: #355069;
         }
 
-        /* Opinie */
-        .testimonials {
-            background-color: #f9f9f9;
-            padding: 50px 0;
-        }
-
-        .testimonial-card {
-            background-color: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            margin: 15px;
-            text-align: center;
-        }
-
-        .testimonial-card p {
-            font-size: 1.1em;
-            color: #555;
-        }
-
-        /* FAQ */
-        .faq {
-            padding: 50px 20px;
-            background-color: #eaeaea;
-        }
-
-        .faq h3 {
-            font-size: 1.8em;
-            margin-bottom: 20px;
-        }
-
-        .faq-item {
-            margin: 15px 0;
-        }
-
-        .faq-item h4 {
-            font-size: 1.3em;
-            cursor: pointer;
-            color: #1c2d48;
-        }
-
-        .faq-item p {
-            font-size: 1.1em;
-            color: #666;
-            display: none;
-        }
-
-        .faq-item.active p {
-            display: block;
-        }
-
     </style>
 </head>
 <body>
@@ -226,17 +133,17 @@
 
     <!-- Nawigacja -->
     <nav>
-        <a href="#about">O nas</a>
-        <a href="#services">Usługi</a>
-        <a href="#gallery">Galeria</a>
-        <a href="#pricing">Cennik</a>
-        <a href="#contact">Kontakt</a>
-        <a href="#testimonials">Opinie</a>
-        <a href="#faq">FAQ</a>
+        <a onclick="showSection('about')">O nas</a>
+        <a onclick="showSection('services')">Usługi</a>
+        <a onclick="showSection('gallery')">Galeria</a>
+        <a onclick="showSection('pricing')">Cennik</a>
+        <a onclick="showSection('contact')">Kontakt</a>
+        <a onclick="showSection('testimonials')">Opinie</a>
+        <a onclick="showSection('faq')">FAQ</a>
     </nav>
 
     <!-- O nas -->
-    <section id="about">
+    <section id="about" class="active">
         <h2>O nas</h2>
         <p>Jesteśmy profesjonalną firmą oferującą kompleksowe usługi czyszczenia, impregnacji oraz konserwacji nawierzchni brukowych, asfaltowych oraz innych. Zajmujemy się także myciem i konserwacją znaków drogowych.</p>
     </section>
@@ -244,74 +151,64 @@
     <!-- Usługi -->
     <section id="services">
         <h2>Nasze usługi</h2>
-        <div class="services">
-            <div class="service-card">
-                <h3>Mycie kostki brukowej</h3>
-                <p>Usuwamy brud, mech, zanieczyszczenia, przywracając blask kostce brukowej.</p>
-            </div>
-            <div class="service-card">
-                <h3>Impregnacja nawierzchni</h3>
-                <p>Ochrona nawierzchni przed wodą, brudem i uszkodzeniami mechanicznymi.</p>
-            </div>
-            <div class="service-card">
-                <h3>Mycie znaków drogowych</h3>
-                <p>Czyścimy i konserwujemy znaki drogowe, zapewniając ich widoczność i trwałość.</p>
-            </div>
+        <div class="service-card">
+            <h3>Mycie kostki brukowej</h3>
+            <p>Usuwamy brud, mech, zanieczyszczenia, przywracając blask kostce brukowej.</p>
+        </div>
+        <div class="service-card">
+            <h3>Impregnacja nawierzchni</h3>
+            <p>Ochrona nawierzchni przed wodą, brudem i uszkodzeniami mechanicznymi.</p>
+        </div>
+        <div class="service-card">
+            <h3>Mycie znaków drogowych</h3>
+            <p>Czyścimy i konserwujemy znaki drogowe, zapewniając ich widoczność i trwałość.</p>
         </div>
     </section>
 
     <!-- Galeria -->
     <section id="gallery">
         <h2>Galeria</h2>
-        <div class="gallery">
-            <img src="https://via.placeholder.com/300x200" alt="Przykład 1">
-            <img src="https://via.placeholder.com/300x200" alt="Przykład 2">
-            <img src="https://via.placeholder.com/300x200" alt="Przykład 3">
-        </div>
+        <p>Wkrótce zdjęcia z realizacji naszych usług!</p>
     </section>
 
     <!-- Cennik -->
     <section id="pricing">
         <h2>Cennik</h2>
-        <div class="pricing">
-            <div class="pricing-card">
-                <h3>Mycie kostki</h3>
-                <p>od 10 zł/m²</p>
-            </div>
-            <div class="pricing-card">
-                <h3>Impregnacja</h3>
-                <p>od 15 zł/m²</p>
-            </div>
-            <div class="pricing-card">
-                <h3>Mycie znaków</h3>
-                <p>od 20 zł/szt.</p>
-            </div>
+        <div class="pricing-card">
+            <h3>Mycie kostki</h3>
+            <p>od 10 zł/m²</p>
+        </div>
+        <div class="pricing-card">
+            <h3>Impregnacja</h3>
+            <p>od 15 zł/m²</p>
+        </div>
+        <div class="pricing-card">
+            <h3>Mycie znaków</h3>
+            <p>od 20 zł/szt.</p>
         </div>
     </section>
 
     <!-- Opinie -->
     <section id="testimonials">
         <h2>Opinie klientów</h2>
-        <div class="testimonials">
-            <div class="testimonial-card">
-                <p>"Profesjonalna firma, efekt końcowy przeszedł moje oczekiwania. Polecam!"</p>
-                <p>- Anna K.</p>
-            </div>
-            <div class="testimonial-card">
-                <p>"Bardzo szybka realizacja, kostka wygląda jak nowa!"</p>
-                <p>- Michał S.</p>
-            </div>
+        <div class="testimonial-card">
+            <p>"Profesjonalna firma, efekt końcowy przeszedł moje oczekiwania. Polecam!"</p>
+            <p>- Anna K.</p>
+        </div>
+        <div class="testimonial-card">
+            <p>"Bardzo szybka realizacja, kostka wygląda jak nowa!"</p>
+            <p>- Michał S.</p>
         </div>
     </section>
 
     <!-- FAQ -->
-    <section id="faq" class="faq">
+    <section id="faq">
         <h3>Najczęściej zadawane pytania</h3>
-        <div class="faq-item">
+        <div>
             <h4>Jakie są korzyści z impregnacji kostki brukowej?</h4>
             <p>Impregnacja pomaga chronić kostkę przed wodą, brudem, mchem oraz uszkodzeniami mechanicznymi.</p>
         </div>
-        <div class="faq-item">
+        <div>
             <h4>Jakie maszyny wykorzystujecie do czyszczenia?</h4>
             <p>Używamy nowoczesnych maszyn do mycia ciśnieniowego oraz urządzeń do impregnacji nawierzchni.</p>
         </div>
@@ -328,5 +225,16 @@
         </form>
     </section>
 
+    <script>
+        function showSection(id) {
+            // Ukryj wszystkie sekcje
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => section.classList.remove('active'));
+            
+            // Pokaż wybraną sekcję
+            const activeSection = document.getElementById(id);
+            activeSection.classList.add('active');
+        }
+    </script>
 </body>
 </html>
