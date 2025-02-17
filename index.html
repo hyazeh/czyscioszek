@@ -14,33 +14,46 @@
 
         body {
             font-family: 'Roboto', sans-serif;
-            background-color: #f5f5f5;
             color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Tło */
+        .background-image {
+            background-image: url('https://images.unsplash.com/photo-1572082754881-557b3cf23f0e'); /* Zdjęcie kostki brukowej */
+            height: 100vh;
+            background-position: center;
+            background-attachment: fixed;
+            background-size: cover;
+            position: relative;
         }
 
         header {
-            background-color: #1c2d48;
-            color: white;
-            padding: 50px 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             text-align: center;
-            position: relative;
-            overflow: hidden;
+            color: white;
         }
 
         header h1 {
-            font-size: 3em;
+            font-size: 3.5em;
             font-weight: 500;
-            margin-bottom: 10px;
+            margin-bottom: 20px;
         }
 
         header p {
-            font-size: 1.2em;
+            font-size: 1.3em;
             font-weight: 300;
             opacity: 0.8;
         }
 
-        section {
-            padding: 60px 20px;
+        /* Parallax Scroll Effect */
+        .parallax-section {
+            padding: 80px 20px;
+            text-align: center;
+            background-color: #f9f9f9;
         }
 
         .services {
@@ -123,26 +136,6 @@
             font-size: 0.9em;
         }
 
-        /* Parallax effect */
-        .parallax {
-            background-image: url('https://images.unsplash.com/photo-1604072137490-8793f585be26');
-            height: 500px;
-            background-position: center;
-            background-attachment: fixed;
-            background-size: cover;
-            position: relative;
-        }
-
-        .parallax h2 {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: white;
-            font-size: 3em;
-            font-weight: 500;
-        }
-
         @media screen and (max-width: 768px) {
             header h1 {
                 font-size: 2.5em;
@@ -164,21 +157,20 @@
                 font-size: 1em;
             }
         }
-
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Czyścioszek</h1>
-        <p>Profesjonalne usługi czyszczenia i impregnacji nawierzchni – dla Ciebie i Twojego otoczenia.</p>
-    </header>
-
-    <div class="parallax">
-        <h2>Wysokiej jakości usługi czyszczenia</h2>
+    <!-- Background Image Section -->
+    <div class="background-image">
+        <header>
+            <h1>Czyścioszek</h1>
+            <p>Profesjonalne usługi czyszczenia i impregnacji nawierzchni – dla Ciebie i Twojego otoczenia.</p>
+        </header>
     </div>
 
-    <section>
+    <!-- Parallax Section -->
+    <div class="parallax-section">
         <h2>Nasze usługi</h2>
         <div class="services">
             <div class="service-card">
@@ -194,8 +186,9 @@
                 <p>Czyścimy i konserwujemy znaki drogowe, zapewniając ich widoczność i trwałość.</p>
             </div>
         </div>
-    </section>
+    </div>
 
+    <!-- Contact Form Section -->
     <section>
         <h2>Skontaktuj się z nami</h2>
         <form action="https://formsubmit.co/your-email@example.com" method="POST">
@@ -206,6 +199,7 @@
         </form>
     </section>
 
+    <!-- Footer Section -->
     <footer>
         <p>&copy; 2025 Czyścioszek - Wszystkie prawa zastrzeżone</p>
     </footer>
