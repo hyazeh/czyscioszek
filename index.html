@@ -62,7 +62,44 @@
             display: block; /* Tylko aktywna sekcja jest widoczna */
         }
 
-        /* Stylowanie innych sekcji jak wcześniej, np. Usługi, Galeria, Cennik */
+        /* Startowa sekcja */
+        #start {
+            background-color: #1c2d48;
+            color: white;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        #start h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        #start p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+
+        #start button {
+            background-color: #355069;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.1em;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #start button:hover {
+            background-color: #1c2d48;
+        }
+
+        /* Stylowanie innych sekcji jak wcześniej */
         .service-card, .pricing-card, .testimonial-card {
             background-color: white;
             border-radius: 12px;
@@ -125,14 +162,9 @@
 </head>
 <body>
 
-    <!-- Header -->
-    <header>
-        <h1>Czyścioszek</h1>
-        <p>Profesjonalne usługi czyszczenia i impregnacji nawierzchni – dla Ciebie i Twojego otoczenia.</p>
-    </header>
-
     <!-- Nawigacja -->
     <nav>
+        <a onclick="showSection('start')">Start</a>
         <a onclick="showSection('about')">O nas</a>
         <a onclick="showSection('services')">Usługi</a>
         <a onclick="showSection('gallery')">Galeria</a>
@@ -142,8 +174,15 @@
         <a onclick="showSection('faq')">FAQ</a>
     </nav>
 
+    <!-- Startowa strona -->
+    <section id="start" class="active">
+        <h2>Witamy w Czyścioszek!</h2>
+        <p>Profesjonalne usługi czyszczenia i impregnacji nawierzchni, kostki brukowej i znaków drogowych.</p>
+        <button onclick="showSection('about')">Dowiedz się więcej</button>
+    </section>
+
     <!-- O nas -->
-    <section id="about" class="active">
+    <section id="about">
         <h2>O nas</h2>
         <p>Jesteśmy profesjonalną firmą oferującą kompleksowe usługi czyszczenia, impregnacji oraz konserwacji nawierzchni brukowych, asfaltowych oraz innych. Zajmujemy się także myciem i konserwacją znaków drogowych.</p>
     </section>
