@@ -1,112 +1,49 @@
-/* RESET */
-* {
+/* Przykładowe style, które możesz dostosować */
+body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* BODY */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    line-height: 1.6;
-}
-
-/* NAWIGACJA */
 nav {
     background-color: #333;
-    padding: 15px;
+    padding: 10px;
     text-align: center;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
 }
 
 nav a {
     color: white;
     text-decoration: none;
-    margin: 0 15px;
-    font-size: 1.2em;
-    text-transform: uppercase;
+    margin: 10px;
+    font-size: 16px;
 }
 
-nav a:hover {
-    text-decoration: underline;
-}
-
-/* SECTION: Startowa sekcja */
-header {
-    background-color: #1c2d48;
-    color: white;
-    padding: 100px 20px;
-    text-align: center;
-    margin-top: 60px;
-}
-
-header h1 {
-    font-size: 3em;
-    margin-bottom: 20px;
-}
-
-header p {
-    font-size: 1.2em;
-    margin-top: 10px;
-}
-
-/* SEKCJE STRONY */
 section {
-    padding: 60px 20px;
-    margin-top: 20px;
-    background-color: white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
+    padding: 20px;
+    margin: 20px;
 }
 
-/* NAGŁÓWKI SEKCJI */
-h2 {
-    margin-bottom: 20px;
-    font-size: 2em;
+h1, h2, h3 {
+    color: #333;
+}
+
+.welcome {
+    background-color: #f0f0f0;
+    padding: 40px;
     text-align: center;
 }
 
-/* FORMULARZ KONTAKTOWY */
-form input, form textarea {
-    width: 100%;
-    padding: 15px;
-    margin: 10px 0;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    font-size: 1em;
+.gallery img {
+    width: 30%;
+    margin: 10px;
 }
 
-/* PRZYCISK WYŚLIJ (form) */
-form input[type="submit"] {
-    background-color: #333;
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-size: 1.2em;
+.faq .question {
+    margin-bottom: 20px;
 }
 
-form input[type="submit"]:hover {
-    background-color: #555;
-}
-
-/* MEDIA QUERY - responsywność */
-@media (max-width: 768px) {
-    nav a {
-        font-size: 1em;
-        margin: 0 10px;
-    }
-
-    header h1 {
-        font-size: 2em;
-    }
-
-    header p {
-        font-size: 1em;
-    }
+.reviews {
+    margin-top: 20px;
+    font-style: italic;
 }
