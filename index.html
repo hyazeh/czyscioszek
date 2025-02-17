@@ -14,55 +14,53 @@
 
         body {
             font-family: 'Roboto', sans-serif;
+            background-color: #f5f5f5;
             color: #333;
-            overflow-x: hidden;
-        }
-
-        /* Tło */
-        .background-image {
-            background-image: url('https://images.unsplash.com/photo-1572082754881-557b3cf23f0e'); /* Zdjęcie kostki brukowej */
-            height: 100vh;
-            background-position: center;
-            background-attachment: fixed;
-            background-size: cover;
-            position: relative;
         }
 
         header {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
+            background-color: #1c2d48;
             color: white;
+            padding: 20px 0;
+            text-align: center;
         }
 
         header h1 {
-            font-size: 3.5em;
-            font-weight: 500;
-            margin-bottom: 20px;
+            font-size: 3em;
         }
 
-        header p {
-            font-size: 1.3em;
-            font-weight: 300;
-            opacity: 0.8;
+        /* Nawigacja */
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+            padding: 10px;
         }
 
-        /* Parallax Scroll Effect */
-        .parallax-section {
-            padding: 80px 20px;
-            text-align: center;
-            background-color: #f9f9f9;
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 15px;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease;
         }
 
-        .services {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
+        nav a:hover {
+            background-color: #555;
+            border-radius: 5px;
         }
 
+        /* Sekcje */
+        section {
+            padding: 60px 20px;
+        }
+
+        .services, .gallery, .pricing, .testimonials {
+            margin-top: 30px;
+        }
+
+        /* Usługi */
         .service-card {
             background-color: white;
             border-radius: 12px;
@@ -87,6 +85,46 @@
             color: #666;
         }
 
+        /* Galeria */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Cennik */
+        .pricing {
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+            background-color: #eaeaea;
+            padding: 50px 0;
+        }
+
+        .pricing-card {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            width: 250px;
+        }
+
+        .pricing-card h3 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        .pricing-card p {
+            font-size: 1.2em;
+        }
+
+        /* Formularz kontaktowy */
         form {
             max-width: 600px;
             margin: 50px auto;
@@ -125,52 +163,86 @@
             background-color: #355069;
         }
 
-        footer {
-            background-color: #1c2d48;
-            color: white;
+        /* Opinie */
+        .testimonials {
+            background-color: #f9f9f9;
+            padding: 50px 0;
+        }
+
+        .testimonial-card {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             padding: 20px;
+            margin: 15px;
             text-align: center;
         }
 
-        footer p {
-            font-size: 0.9em;
+        .testimonial-card p {
+            font-size: 1.1em;
+            color: #555;
         }
 
-        @media screen and (max-width: 768px) {
-            header h1 {
-                font-size: 2.5em;
-            }
-
-            header p {
-                font-size: 1em;
-            }
-
-            .services {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .service-card {
-                padding: 20px;
-            }
-
-            input[type="submit"] {
-                font-size: 1em;
-            }
+        /* FAQ */
+        .faq {
+            padding: 50px 20px;
+            background-color: #eaeaea;
         }
+
+        .faq h3 {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+        }
+
+        .faq-item {
+            margin: 15px 0;
+        }
+
+        .faq-item h4 {
+            font-size: 1.3em;
+            cursor: pointer;
+            color: #1c2d48;
+        }
+
+        .faq-item p {
+            font-size: 1.1em;
+            color: #666;
+            display: none;
+        }
+
+        .faq-item.active p {
+            display: block;
+        }
+
     </style>
 </head>
 <body>
 
-    <!-- Background Image Section -->
-    <div class="background-image">
-        <header>
-            <h1>Czyścioszek</h1>
-            <p>Profesjonalne usługi czyszczenia i impregnacji nawierzchni – dla Ciebie i Twojego otoczenia.</p>
-        </header>
-    </div>
+    <!-- Header -->
+    <header>
+        <h1>Czyścioszek</h1>
+        <p>Profesjonalne usługi czyszczenia i impregnacji nawierzchni – dla Ciebie i Twojego otoczenia.</p>
+    </header>
 
-    <!-- Parallax Section -->
-    <div class="parallax-section">
+    <!-- Nawigacja -->
+    <nav>
+        <a href="#about">O nas</a>
+        <a href="#services">Usługi</a>
+        <a href="#gallery">Galeria</a>
+        <a href="#pricing">Cennik</a>
+        <a href="#contact">Kontakt</a>
+        <a href="#testimonials">Opinie</a>
+        <a href="#faq">FAQ</a>
+    </nav>
+
+    <!-- O nas -->
+    <section id="about">
+        <h2>O nas</h2>
+        <p>Jesteśmy profesjonalną firmą oferującą kompleksowe usługi czyszczenia, impregnacji oraz konserwacji nawierzchni brukowych, asfaltowych oraz innych. Zajmujemy się także myciem i konserwacją znaków drogowych.</p>
+    </section>
+
+    <!-- Usługi -->
+    <section id="services">
         <h2>Nasze usługi</h2>
         <div class="services">
             <div class="service-card">
@@ -186,10 +258,67 @@
                 <p>Czyścimy i konserwujemy znaki drogowe, zapewniając ich widoczność i trwałość.</p>
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- Contact Form Section -->
-    <section>
+    <!-- Galeria -->
+    <section id="gallery">
+        <h2>Galeria</h2>
+        <div class="gallery">
+            <img src="https://via.placeholder.com/300x200" alt="Przykład 1">
+            <img src="https://via.placeholder.com/300x200" alt="Przykład 2">
+            <img src="https://via.placeholder.com/300x200" alt="Przykład 3">
+        </div>
+    </section>
+
+    <!-- Cennik -->
+    <section id="pricing">
+        <h2>Cennik</h2>
+        <div class="pricing">
+            <div class="pricing-card">
+                <h3>Mycie kostki</h3>
+                <p>od 10 zł/m²</p>
+            </div>
+            <div class="pricing-card">
+                <h3>Impregnacja</h3>
+                <p>od 15 zł/m²</p>
+            </div>
+            <div class="pricing-card">
+                <h3>Mycie znaków</h3>
+                <p>od 20 zł/szt.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Opinie -->
+    <section id="testimonials">
+        <h2>Opinie klientów</h2>
+        <div class="testimonials">
+            <div class="testimonial-card">
+                <p>"Profesjonalna firma, efekt końcowy przeszedł moje oczekiwania. Polecam!"</p>
+                <p>- Anna K.</p>
+            </div>
+            <div class="testimonial-card">
+                <p>"Bardzo szybka realizacja, kostka wygląda jak nowa!"</p>
+                <p>- Michał S.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="faq">
+        <h3>Najczęściej zadawane pytania</h3>
+        <div class="faq-item">
+            <h4>Jakie są korzyści z impregnacji kostki brukowej?</h4>
+            <p>Impregnacja pomaga chronić kostkę przed wodą, brudem, mchem oraz uszkodzeniami mechanicznymi.</p>
+        </div>
+        <div class="faq-item">
+            <h4>Jakie maszyny wykorzystujecie do czyszczenia?</h4>
+            <p>Używamy nowoczesnych maszyn do mycia ciśnieniowego oraz urządzeń do impregnacji nawierzchni.</p>
+        </div>
+    </section>
+
+    <!-- Formularz kontaktowy -->
+    <section id="contact">
         <h2>Skontaktuj się z nami</h2>
         <form action="https://formsubmit.co/your-email@example.com" method="POST">
             <input type="text" name="name" placeholder="Twoje imię" required>
@@ -198,11 +327,6 @@
             <input type="submit" value="Wyślij wiadomość">
         </form>
     </section>
-
-    <!-- Footer Section -->
-    <footer>
-        <p>&copy; 2025 Czyścioszek - Wszystkie prawa zastrzeżone</p>
-    </footer>
 
 </body>
 </html>
