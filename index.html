@@ -4,113 +4,194 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Czyścioszek - Usługi czyszczenia i impregnacji</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        * {
             margin: 0;
             padding: 0;
-            background-color: #f4f4f9;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f5f5f5;
             color: #333;
         }
+
         header {
-            background-color: #2c3e50;
+            background-color: #1c2d48;
             color: white;
-            padding: 20px 0;
+            padding: 50px 0;
             text-align: center;
+            position: relative;
+            overflow: hidden;
         }
+
         header h1 {
-            font-size: 2.5em;
-            margin: 0;
-        }
-        header p {
-            font-size: 1.2em;
-            margin: 5px 0;
-        }
-        section {
-            padding: 40px 20px;
-        }
-        .services {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            margin-top: 30px;
-        }
-        .service-card {
-            background-color: white;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            width: 30%;
-            margin: 10px 0;
-            padding: 20px;
-            text-align: center;
-            transition: transform 0.3s;
-        }
-        .service-card:hover {
-            transform: translateY(-5px);
-        }
-        .service-card h3 {
-            font-size: 1.6em;
+            font-size: 3em;
+            font-weight: 500;
             margin-bottom: 10px;
         }
+
+        header p {
+            font-size: 1.2em;
+            font-weight: 300;
+            opacity: 0.8;
+        }
+
+        section {
+            padding: 60px 20px;
+        }
+
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .service-card {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .service-card h3 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+
         .service-card p {
             font-size: 1.1em;
+            color: #666;
         }
+
         form {
             max-width: 600px;
-            margin: 30px auto;
+            margin: 50px auto;
             background-color: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
+
         input, textarea {
             width: 100%;
             padding: 12px;
             margin: 10px 0;
+            border: 1px solid #ccc;
             border-radius: 8px;
-            border: 1px solid #ddd;
-            box-sizing: border-box;
+            font-size: 1em;
+            transition: border-color 0.3s ease;
         }
+
+        input:focus, textarea:focus {
+            border-color: #1c2d48;
+        }
+
         input[type="submit"] {
-            background-color: #2c3e50;
+            background-color: #1c2d48;
             color: white;
             border: none;
             cursor: pointer;
+            padding: 15px;
+            font-size: 1.1em;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
         }
+
         input[type="submit"]:hover {
-            background-color: #34495e;
+            background-color: #355069;
         }
+
         footer {
-            background-color: #2c3e50;
+            background-color: #1c2d48;
             color: white;
+            padding: 20px;
             text-align: center;
-            padding: 10px 0;
-            position: relative;
-            bottom: 0;
-            width: 100%;
         }
+
+        footer p {
+            font-size: 0.9em;
+        }
+
+        /* Parallax effect */
+        .parallax {
+            background-image: url('https://images.unsplash.com/photo-1604072137490-8793f585be26');
+            height: 500px;
+            background-position: center;
+            background-attachment: fixed;
+            background-size: cover;
+            position: relative;
+        }
+
+        .parallax h2 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 3em;
+            font-weight: 500;
+        }
+
+        @media screen and (max-width: 768px) {
+            header h1 {
+                font-size: 2.5em;
+            }
+
+            header p {
+                font-size: 1em;
+            }
+
+            .services {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .service-card {
+                padding: 20px;
+            }
+
+            input[type="submit"] {
+                font-size: 1em;
+            }
+        }
+
     </style>
 </head>
 <body>
+
     <header>
         <h1>Czyścioszek</h1>
-        <p>Profesjonalne mycie i impregnacja kostki brukowej oraz nawierzchni</p>
+        <p>Profesjonalne usługi czyszczenia i impregnacji nawierzchni – dla Ciebie i Twojego otoczenia.</p>
     </header>
-    
+
+    <div class="parallax">
+        <h2>Wysokiej jakości usługi czyszczenia</h2>
+    </div>
+
     <section>
         <h2>Nasze usługi</h2>
         <div class="services">
             <div class="service-card">
                 <h3>Mycie kostki brukowej</h3>
-                <p>Usuwanie brudu, mchu i innych zanieczyszczeń z kostki brukowej, przywracając jej pierwotny wygląd.</p>
+                <p>Usuwamy brud, mech, zanieczyszczenia, przywracając blask kostce brukowej.</p>
             </div>
             <div class="service-card">
                 <h3>Impregnacja nawierzchni</h3>
-                <p>Ochrona kostki brukowej i innych nawierzchni przed wodą, brudem oraz uszkodzeniami mechanicznymi.</p>
+                <p>Ochrona nawierzchni przed wodą, brudem i uszkodzeniami mechanicznymi.</p>
             </div>
             <div class="service-card">
                 <h3>Mycie znaków drogowych</h3>
-                <p>Profesjonalne czyszczenie i konserwacja znaków drogowych, zapewniające ich czytelność i trwałość.</p>
+                <p>Czyścimy i konserwujemy znaki drogowe, zapewniając ich widoczność i trwałość.</p>
             </div>
         </div>
     </section>
@@ -128,5 +209,6 @@
     <footer>
         <p>&copy; 2025 Czyścioszek - Wszystkie prawa zastrzeżone</p>
     </footer>
+
 </body>
 </html>
