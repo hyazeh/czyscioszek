@@ -1,19 +1,26 @@
-/* Style dla strony */
+/* RESET */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* BODY */
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
+    line-height: 1.6;
 }
 
+/* NAWIGACJA */
 nav {
     background-color: #333;
     padding: 15px;
     text-align: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
 }
 
 nav a {
@@ -21,49 +28,85 @@ nav a {
     text-decoration: none;
     margin: 0 15px;
     font-size: 1.2em;
+    text-transform: uppercase;
 }
 
 nav a:hover {
     text-decoration: underline;
 }
 
+/* SECTION: Startowa sekcja */
 header {
     background-color: #1c2d48;
     color: white;
-    padding: 60px 20px;
+    padding: 100px 20px;
     text-align: center;
+    margin-top: 60px;
 }
 
-section {
-    padding: 40px 20px;
-    margin-top: 20px;
-    background-color: white;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-h2 {
+header h1 {
+    font-size: 3em;
     margin-bottom: 20px;
 }
 
-ul {
-    list-style-type: none;
+header p {
+    font-size: 1.2em;
+    margin-top: 10px;
 }
 
+/* SEKCJE STRONY */
+section {
+    padding: 60px 20px;
+    margin-top: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* NAGŁÓWKI SEKCJI */
+h2 {
+    margin-bottom: 20px;
+    font-size: 2em;
+    text-align: center;
+}
+
+/* FORMULARZ KONTAKTOWY */
 form input, form textarea {
     width: 100%;
-    padding: 10px;
+    padding: 15px;
     margin: 10px 0;
     border-radius: 5px;
     border: 1px solid #ccc;
+    font-size: 1em;
 }
 
+/* PRZYCISK WYŚLIJ (form) */
 form input[type="submit"] {
     background-color: #333;
     color: white;
     border: none;
     cursor: pointer;
+    font-size: 1.2em;
 }
 
 form input[type="submit"]:hover {
     background-color: #555;
+}
+
+/* MEDIA QUERY - responsywność */
+@media (max-width: 768px) {
+    nav a {
+        font-size: 1em;
+        margin: 0 10px;
+    }
+
+    header h1 {
+        font-size: 2em;
+    }
+
+    header p {
+        font-size: 1em;
+    }
 }
