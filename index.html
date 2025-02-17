@@ -26,7 +26,6 @@
             color: white;
             padding: 20px 0;
             text-align: center;
-            transition: opacity 0.5s ease-out;
         }
 
         header h1 {
@@ -173,14 +172,14 @@
 
     <!-- Nawigacja -->
     <nav>
-        <a onclick="showSection('start')">Start</a>
-        <a onclick="showSection('about')">O nas</a>
-        <a onclick="showSection('services')">Usługi</a>
-        <a onclick="showSection('gallery')">Galeria</a>
-        <a onclick="showSection('pricing')">Cennik</a>
-        <a onclick="showSection('contact')">Kontakt</a>
-        <a onclick="showSection('testimonials')">Opinie</a>
-        <a onclick="showSection('faq')">FAQ</a>
+        <a href="javascript:void(0)" onclick="showSection('start')">Start</a>
+        <a href="javascript:void(0)" onclick="showSection('about')">O nas</a>
+        <a href="javascript:void(0)" onclick="showSection('services')">Usługi</a>
+        <a href="javascript:void(0)" onclick="showSection('gallery')">Galeria</a>
+        <a href="javascript:void(0)" onclick="showSection('pricing')">Cennik</a>
+        <a href="javascript:void(0)" onclick="showSection('contact')">Kontakt</a>
+        <a href="javascript:void(0)" onclick="showSection('testimonials')">Opinie</a>
+        <a href="javascript:void(0)" onclick="showSection('faq')">FAQ</a>
     </nav>
 
     <!-- Startowa strona -->
@@ -275,20 +274,13 @@
 
     <script>
         function showSection(id) {
-            // Ukryj wszystkie sekcje
             const sections = document.querySelectorAll('section');
-            sections.forEach(section => section.classList.remove('active'));
+            sections.forEach(section => {
+                section.classList.remove('active'); // Ukrywamy wszystkie sekcje
+            });
 
-            // Zniknij startową sekcję, jeśli jest aktywna
-            const startSection = document.getElementById('start');
-            startSection.style.opacity = '0';  // Spowoduje zniknięcie
-            setTimeout(() => {
-                startSection.classList.remove('active');
-            }, 500); // Po 0.5s ukryj startową sekcję
-
-            // Pokaż wybraną sekcję
             const activeSection = document.getElementById(id);
-            activeSection.classList.add('active');
+            activeSection.classList.add('active'); // Pokazujemy wybraną sekcję
         }
     </script>
 </body>
