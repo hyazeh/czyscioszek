@@ -23,6 +23,7 @@
             color: white;
             padding: 20px 0;
             text-align: center;
+            transition: opacity 0.5s ease-out;
         }
 
         header h1 {
@@ -269,7 +270,14 @@
             // Ukryj wszystkie sekcje
             const sections = document.querySelectorAll('section');
             sections.forEach(section => section.classList.remove('active'));
-            
+
+            // Zniknij startową sekcję, jeśli jest aktywna
+            const startSection = document.getElementById('start');
+            startSection.style.opacity = '0';  // Spowoduje zniknięcie
+            setTimeout(() => {
+                startSection.classList.remove('active');
+            }, 500); // Po 0.5s ukryj startową sekcję
+
             // Pokaż wybraną sekcję
             const activeSection = document.getElementById(id);
             activeSection.classList.add('active');
